@@ -1,7 +1,7 @@
 package br.edu.ifs.academico.service;
 
 import br.edu.ifs.academico.model.GeneroModel;
-import br.edu.ifs.academico.repository.GeneroRepository;
+import br.edu.ifs.academico.repository.IGeneroRepository;
 import br.edu.ifs.academico.rest.dto.GeneroDto;
 import br.edu.ifs.academico.rest.form.GeneroForm;
 import br.edu.ifs.academico.rest.form.GeneroUpdateForm;
@@ -20,7 +20,7 @@ import java.util.Optional;
 public class GeneroService {
 
     @Autowired
-    GeneroRepository generoRepository;
+    IGeneroRepository generoRepository;
 
     public GeneroDto findById(long codigoGenero) {
         try {

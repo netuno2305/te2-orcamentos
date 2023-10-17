@@ -1,10 +1,10 @@
 package br.edu.ifs.academico.service;
 
 import br.edu.ifs.academico.model.GeneroModel;
-import br.edu.ifs.academico.repository.GeneroRepository;
+import br.edu.ifs.academico.repository.IGeneroRepository;
 import br.edu.ifs.academico.rest.dto.AlunoDto;
 import br.edu.ifs.academico.model.AlunoModel;
-import br.edu.ifs.academico.repository.AlunoRepository;
+import br.edu.ifs.academico.repository.IAlunoRepository;
 import br.edu.ifs.academico.rest.form.AlunoForm;
 import br.edu.ifs.academico.rest.form.AlunoUpdateForm;
 import br.edu.ifs.academico.service.exceptions.DataIntegrityException;
@@ -22,10 +22,10 @@ import java.util.Optional;
 public class AlunoService {
 
     @Autowired
-    AlunoRepository alunoRepository;
+    IAlunoRepository alunoRepository;
 
     @Autowired
-    GeneroRepository generoRepository;
+    IGeneroRepository generoRepository;
 
     public AlunoDto findById(long matricula) {
         try {

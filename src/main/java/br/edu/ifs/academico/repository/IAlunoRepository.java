@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface AlunoRepository extends JpaRepository<AlunoModel, Long> {
+public interface IAlunoRepository extends JpaRepository<AlunoModel, Long> {
 
     /***************************************************
         Outras formas de obtenção de dados "SELECT"
