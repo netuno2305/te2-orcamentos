@@ -7,7 +7,7 @@ import java.time.LocalDate;
 @Entity
 @Data
 @Table(name="ModalidadeAplicacao")
-public class ModalidadeAplicacaoModal {
+public class ModalidadeAplicacaoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
