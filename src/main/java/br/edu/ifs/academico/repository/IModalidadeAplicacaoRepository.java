@@ -2,16 +2,13 @@ package br.edu.ifs.academico.repository;
 
 import br.edu.ifs.academico.model.FonteRecursoModel;
 import br.edu.ifs.academico.model.ModalidadeAplicacaoModel;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface IModalidadeAplicacaoRepository {
+public interface IModalidadeAplicacaoRepository extends JpaRepository<ModalidadeAplicacaoModel, Long> {
 
-    void Save(ModalidadeAplicacaoModel modalidadeAplicacaoModel);
-    List<ModalidadeAplicacaoModel> findAll();
-    ModalidadeAplicacaoModel findById(Long id);
-    ModalidadeAplicacaoModel update(ModalidadeAplicacaoModel modalidadeAplicacaoModel);
-    void Delete(Long id);
+
 }

@@ -15,20 +15,9 @@ public class AlunoForm {
     @Size(max = 100)
     private String nome;
 
-    @NotEmpty
-    @NotBlank
-    @Email(message = "O Endereço de e-mail é inválido.")
-    @Size(max = 80)
-    private String email;
 
-    @NotEmpty
-    @NotBlank
-    @CPF(message = "O Número do CPF informado é inválido.")
-    @Size(min = 11, max = 11)
-    private String cpf;
-
-    @NotNull(message = "Data de nascimento não pode ser nula.")
-    @Past(message = "A data de nascimento informada deve ser anterior ao dia atual.")
+    @NotNull(message = "Data de cadastro não pode ser nula.")
+    @Past(message = "A data de cadastro informada deve ser anterior ao dia atual.")
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataNascimento;
 

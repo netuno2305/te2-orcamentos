@@ -20,6 +20,9 @@ public class FonteRecursoModel {
     private Long ID;
 
     @Column(nullable = false, length = 255)
+    private Integer Codigo;
+
+    @Column(nullable = false, length = 255)
     private String Nome;
 
     @Column(name = "DataCadastro", nullable = false)

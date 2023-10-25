@@ -92,8 +92,7 @@ public class AlunoService {
     private AlunoModel convertAlunoFormToAlunoModel(AlunoForm alunoForm) {
         AlunoModel alunoModel = new AlunoModel();
         alunoModel.setNome(alunoForm.getNome());
-        alunoModel.setEmail(alunoForm.getEmail());
-        alunoModel.setCpf(alunoForm.getCpf());
+
         alunoModel.setDataNascimento(alunoForm.getDataNascimento());
         GeneroModel generoAtualizado = new GeneroModel();
         generoAtualizado.setCodigo(alunoForm.getCodigoGenero());

@@ -1,14 +1,23 @@
-package br.edu.ifs.academico.rest.form;
+package br.edu.ifs.academico.rest.form.FonteRecurso;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 
-public class TipoTransacaoForm {
+@Data
+public class FonteRecursoForm {
+
+    @NotEmpty
+    @NotBlank(message = "O Código não pode estar em branco.")
+    @Size(max = 100)
+    private Integer codigo;
+
     @NotEmpty
     @NotBlank
-    @Email(message = "O Endereço de e-mail é inválido.")
+    @Email(message = "O Nome é inválido.")
     @Size(max = 80)
     private String nome;
 
@@ -17,8 +26,4 @@ public class TipoTransacaoForm {
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
 
-    @NotNull(message = "Data de altera não pode ser nula.")
-    @Past(message = "A data de cadastro informada deve ser anterior ao dia atual.")
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate dataAlteracao;
 }

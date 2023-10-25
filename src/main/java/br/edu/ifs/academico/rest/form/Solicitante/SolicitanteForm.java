@@ -1,15 +1,14 @@
-package br.edu.ifs.academico.rest.form;
+package br.edu.ifs.academico.rest.form.Solicitante;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 
-public class ObjetivoEstrategicoForm {
-
+public class SolicitanteForm {
     @NotEmpty
     @NotBlank
-    @Email(message = "O Endereço de e-mail é inválido.")
+    @Email(message = "O nome é inválido.")
     @Size(max = 80)
     private String nome;
 
@@ -18,8 +17,8 @@ public class ObjetivoEstrategicoForm {
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
 
-    @NotNull(message = "Data de altera não pode ser nula.")
-    @Past(message = "A data de cadastro informada deve ser anterior ao dia atual.")
+    @NotNull(message = "Data de alteração não pode ser nula.")
+    @Past(message = "A data de alteração informada deve ser anterior ao dia atual.")
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataAlteracao;
 }
