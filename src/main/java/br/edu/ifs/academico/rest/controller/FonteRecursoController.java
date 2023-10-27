@@ -1,12 +1,7 @@
 package br.edu.ifs.academico.rest.controller;
-
-import br.edu.ifs.academico.rest.dto.AlunoDto;
 import br.edu.ifs.academico.rest.dto.FonteRecursoDto;
-import br.edu.ifs.academico.rest.form.AlunoForm;
-import br.edu.ifs.academico.rest.form.AlunoUpdateForm;
 import br.edu.ifs.academico.rest.form.FonteRecurso.FonteRecursoForm;
 import br.edu.ifs.academico.rest.form.FonteRecurso.UpdateFonteRecursoForm;
-import br.edu.ifs.academico.service.AlunoService;
 import br.edu.ifs.academico.service.FonteRecursoService;
 import br.edu.ifs.academico.service.exceptions.ConstraintException;
 import org.springframework.beans.factory.annotation.Autowired;
