@@ -86,6 +86,7 @@ public class UnidadeOrcamentariaService {
         UnidadeOrcamentariaDto unidadeOrcamentariaDto = new UnidadeOrcamentariaDto();
         unidadeOrcamentariaDto.setCodigo(unidadeOrcamentariaModel.getCodigo());
         unidadeOrcamentariaDto.setNome(unidadeOrcamentariaModel.getNome());
+        unidadeOrcamentariaDto.setId(unidadeOrcamentariaModel.getID());
         return unidadeOrcamentariaDto;
     }
 
