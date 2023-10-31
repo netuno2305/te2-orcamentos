@@ -78,7 +78,6 @@ public class ProgramaService {
         ProgramaModel programaModel = new ProgramaModel();
         programaModel.setCodigo(programaForm.getCodigo());
         programaModel.setNome(programaForm.getNome());
-        programaModel.setDataCadastro(programaForm.getDataCadastro());
         return programaModel;
     }
 

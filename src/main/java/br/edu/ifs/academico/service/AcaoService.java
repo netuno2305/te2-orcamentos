@@ -78,7 +78,6 @@ public class AcaoService {
         AcaoModel acaoModel = new AcaoModel();
         acaoModel.setCodigo(acaoForm.getCodigo());
         acaoModel.setNome(acaoForm.getNome());
-        acaoModel.setDataCadastro(acaoForm.getDataCadastro());
         return acaoModel;
     }
 

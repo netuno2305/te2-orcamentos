@@ -28,4 +28,9 @@ public class ProgramaModel {
     private void preUpdate() {
         DataAlteracao = LocalDate.now();
     }
+
+    @PrePersist
+    private void prePersist() {
+        DataCadastro = LocalDate.now();
+    }
 }

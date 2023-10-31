@@ -15,10 +15,4 @@ public class AcaoForm {
 
     private Long codigo;
 
-
-    @NotNull(message = "Data de cadastro não pode ser nula.")
-    @Past(message = "A data de cadastro informada deve ser anterior ao dia atual.")
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate dataCadastro;
-
 }

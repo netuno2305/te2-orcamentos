@@ -28,4 +28,9 @@ public class AcaoModel {
     private void preUpdate() {
         DataAlteracao = LocalDate.now();
     }
+
+    @PrePersist
+    private void prePersist() {
+        DataCadastro = LocalDate.now();
+    }
 }

@@ -26,4 +26,9 @@ public class UnidadeModel {
     private void preUpdate() {
         DataAlteracao = LocalDate.now();
     }
+
+    @PrePersist
+    private void prePersist() {
+        DataCadastro = LocalDate.now();
+    }
 }

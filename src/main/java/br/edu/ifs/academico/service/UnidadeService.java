@@ -76,7 +76,6 @@ public class UnidadeService {
     private UnidadeModel convertUnidadeFormToUnidadeModel(UnidadeForm unidadeForm) {
         UnidadeModel unidadeModel = new UnidadeModel();
         unidadeModel.setNome(unidadeForm.getNome());
-        unidadeModel.setDataCadastro(unidadeForm.getDataCadastro());
         return unidadeModel;
     }
 

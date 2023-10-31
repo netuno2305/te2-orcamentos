@@ -78,7 +78,6 @@ public class ElementoDespesaService {
         ElementoDespesaModel elementoDespesaModel = new ElementoDespesaModel();
         elementoDespesaModel.setCodigo(elementoDespesaForm.getCodigo());
         elementoDespesaModel.setNome(elementoDespesaForm.getNome());
-        elementoDespesaModel.setDataCadastro(elementoDespesaForm.getDataCadastro());
         return elementoDespesaModel;
     }
 
