@@ -9,9 +9,11 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GrupoDespesaDto {
-    private Float Codigo;
-    private String Nome;
+public class LancamentoDto {
+    private Long Id;
+    private String Descricao;
+    private Float Valor;
+    private LocalDate DataLancamento;
     private LocalDate DataCadastro;
     private LocalDate DataAlteracao;
 }

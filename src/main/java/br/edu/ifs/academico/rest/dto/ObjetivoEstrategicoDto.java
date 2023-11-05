@@ -13,5 +13,5 @@ public class ObjetivoEstrategicoDto {
 
     private String Nome;
     private LocalDate DataCadastro;
-    private LocalDate DataAuteracao;
+    private LocalDate DataAlteracao;
 }

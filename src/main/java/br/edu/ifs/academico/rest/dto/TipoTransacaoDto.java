@@ -12,5 +12,5 @@ import java.time.LocalDate;
 public class TipoTransacaoDto {
     private String Nome;
     private LocalDate DataCadastro;
-    private LocalDate DataAuteracao;
+    private LocalDate DataAlteracao;
 }
