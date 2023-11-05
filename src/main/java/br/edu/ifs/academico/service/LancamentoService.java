@@ -117,12 +117,4 @@ public class LancamentoService {
         return lancamentoDtoList;
     }
 
-    //Poderíamos usar esse método no DELETE... apenas adicionei como exemplo de validação de negócio.
-    /* public boolean possoRemover(long idLancamento) {
-        if (lancamentoRepository.findCountLancamentoUso(idLancamento) > 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }  */
 }

@@ -98,12 +98,5 @@ public class UnidadeOrcamentariaService {
         return unidadeOrcamentariaDtoList;
     }
 
-    //Poderíamos usar esse método no DELETE... apenas adicionei como exemplo de validação de negócio.
-    /* public boolean possoRemover(long idUnidadeOrcamentaria) {
-        if (unidadeOrcamentariaRepository.findCountUnidadeOrcamentariaUso(idUnidadeOrcamentaria) > 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }  */
+
 }

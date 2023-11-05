@@ -98,12 +98,4 @@ public class ElementoDespesaService {
         return elementoDespesaDtoList;
     }
 
-    //Poderíamos usar esse método no DELETE... apenas adicionei como exemplo de validação de negócio.
-    /* public boolean possoRemover(long idElementoDespesa) {
-        if (elementoDespesaRepository.findCountElementoDespesaUso(idElementoDespesa) > 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }  */
 }

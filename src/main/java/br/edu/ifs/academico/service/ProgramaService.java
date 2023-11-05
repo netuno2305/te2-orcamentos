@@ -98,12 +98,5 @@ public class ProgramaService {
         return programaDtoList;
     }
 
-    //Poderíamos usar esse método no DELETE... apenas adicionei como exemplo de validação de negócio.
-    /* public boolean possoRemover(long idPrograma) {
-        if (programaRepository.findCountProgramaUso(idPrograma) > 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }  */
+
 }

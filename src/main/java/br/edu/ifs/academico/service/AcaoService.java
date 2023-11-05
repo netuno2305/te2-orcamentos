@@ -98,12 +98,4 @@ public class AcaoService {
         return acaoDtoList;
     }
 
-    //Poderíamos usar esse método no DELETE... apenas adicionei como exemplo de validação de negócio.
-    /* public boolean possoRemover(long idAcao) {
-        if (acaoRepository.findCountAcaoUso(idAcao) > 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }  */
 }
