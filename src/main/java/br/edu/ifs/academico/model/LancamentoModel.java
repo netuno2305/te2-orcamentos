@@ -39,6 +39,24 @@ public class LancamentoModel {
     @Column(nullable = false)
     private Long IDLancamentoPai;
 
+    @Column(nullable = false)
+    private Long IDFonteRecurso;
+
+    @Column(nullable = false)
+    private Long IDSolicitante;
+
+    @Column(nullable = false)
+    private Long IDObjetivoEstrategico;
+
+    @Column(nullable = false)
+    private Long IDGrupoDespesa;
+
+    @Column(nullable = false)
+    private Long IDModalidadeAplicacao;
+
+    @Column(nullable = false)
+    private Long IDTipoTransacao;
+
     @Column(name = "DataLancamento")
     private LocalDate DataLancamento;
 

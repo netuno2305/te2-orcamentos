@@ -3,6 +3,7 @@ package br.edu.ifs.academico.rest.form.Lancamento;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.validation.constraints.*;
 
 import org.hibernate.validator.constraints.Range;
@@ -28,6 +29,18 @@ public class LancamentoForm {
     private Long idPrograma;
 
     private Long idLancamentoPai;
+
+    private Long idFonteRecurso;
+
+    private Long idSolicitante;
+
+    private Long idObjetivoEstrategico;
+
+    private Long idGrupoDespesa;
+
+    private Long idModalidadeAplicacao;
+
+    private Long idTipoTransacao;
 
     @Min(1000)
     @Max(9999)

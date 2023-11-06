@@ -87,6 +87,12 @@ public class LancamentoService {
         lancamentoModel.setIDAcao(lancamentoForm.getIdAcao());
         lancamentoModel.setIDPrograma(lancamentoForm.getIdPrograma());
         lancamentoModel.setIDLancamentoPai(lancamentoForm.getIdLancamentoPai());
+        lancamentoModel.setIDFonteRecurso(lancamentoForm.getIdFonteRecurso());
+        lancamentoModel.setIDSolicitante(lancamentoForm.getIdSolicitante());
+        lancamentoModel.setIDObjetivoEstrategico(lancamentoForm.getIdObjetivoEstrategico());
+        lancamentoModel.setIDGrupoDespesa(lancamentoForm.getIdGrupoDespesa());
+        lancamentoModel.setIDModalidadeAplicacao(lancamentoForm.getIdModalidadeAplicacao());
+        lancamentoModel.setIDTipoTransacao(lancamentoForm.getIdTipoTransacao());
         lancamentoModel.setAnoOrcamento(lancamentoForm.getAnoOrcamento());
         lancamentoModel.setDescricao(lancamentoForm.getDescricao());
         lancamentoModel.setGED(lancamentoForm.getGED());
