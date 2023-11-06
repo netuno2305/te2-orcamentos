@@ -28,16 +28,16 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("Sistema Acadêmico")
-                .description("Api do Sistema Acadêmico")
+                .title("Orçamentos")
+                .description("Api do Orçamentos")
                 .version("1.0")
                 .contact(contact())
                 .build();
     }
 
     private Contact contact(){
-        return new Contact("Glauco Luiz Rezende de Carvalho"
+        return new Contact("Davi Rezende e Marcos Vinicius"
                 , "http://www.ifs.edu.br",
-                "glauco.carvalho@academico.ifs.edu.br");
+                "davi.santos0670@academico.ifs.edu.br");
     }
 }
