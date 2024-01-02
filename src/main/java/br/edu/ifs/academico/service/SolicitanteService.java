@@ -6,6 +6,7 @@ import br.edu.ifs.academico.rest.dto.SolicitanteDto;
 import br.edu.ifs.academico.rest.form.Solicitante.SolicitanteForm;
 import br.edu.ifs.academico.service.exceptions.DataIntegrityException;
 import br.edu.ifs.academico.service.exceptions.ObjectNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
@@ -18,16 +19,11 @@ import java.util.Optional;
 @Service
 public class SolicitanteService {
 
+    @Autowired
     ISolicitanteRepository solicitanteRepository;
     public SolicitanteDto insert(SolicitanteForm solicitanteForm) {
         try {
             SolicitanteModel solicitanteModel = convertToModel(solicitanteForm);
-            Optional<SolicitanteModel> byId = solicitanteRepository.findById(solicitanteModel.getID());
-
-            if (byId.isPresent()) {
-                throw new IllegalStateException("Id já registrado.");
-            }
-
             solicitanteModel = solicitanteRepository.save(solicitanteModel);
             return convertToDto(solicitanteModel);
         } catch (DataIntegrityViolationException e) {
@@ -81,12 +77,12 @@ public class SolicitanteService {
     private SolicitanteModel convertToModel(SolicitanteForm solicitanteForm) {
         SolicitanteModel solicitanteModel = new SolicitanteModel();
         solicitanteModel.setNome(solicitanteForm.getNome());
-        solicitanteModel.setDataCadastro(solicitanteForm.getDataCadastro());
 
         return solicitanteModel;
     }
     private SolicitanteDto convertToDto(SolicitanteModel solicitanteModel) {
         SolicitanteDto solicitanteDto = new SolicitanteDto();
+        solicitanteDto.setId(solicitanteModel.getID());
         solicitanteDto.setNome(solicitanteModel.getNome());
         solicitanteDto.setDataCadastro(solicitanteModel.getDataCadastro());
 
