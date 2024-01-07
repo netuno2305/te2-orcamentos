@@ -21,6 +21,16 @@ public class GrupoDespesaModel {
     @Column(name = "DataCadastro", nullable = false)
     private LocalDate DataCadastro;
 
-    @Column(name = "DataAlteracao", nullable = false)
+    @Column(name = "DataAlteracao")
     private LocalDate DataAlteracao;
+
+    @PreUpdate
+    private void preUpdate() {
+        DataAlteracao = LocalDate.now();
+    }
+
+    @PrePersist
+    private void prePersist() {
+        DataCadastro = LocalDate.now();
+    }
 }

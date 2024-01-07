@@ -11,6 +11,7 @@ import br.edu.ifs.academico.rest.form.FonteRecurso.UpdateFonteRecursoForm;
 import br.edu.ifs.academico.rest.form.GrupoDespesa.GrupoDespesaForm;
 import br.edu.ifs.academico.service.exceptions.DataIntegrityException;
 import br.edu.ifs.academico.service.exceptions.ObjectNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
@@ -22,17 +23,12 @@ import java.util.Optional;
 
 @Service
 public class GrupoDespesaService {
+    @Autowired
     IGrupoDespesaRepository grupoDespesaRepository;
 
     public GrupoDespesaDto insert(GrupoDespesaForm grupoDespesaForm) {
         try {
             GrupoDespesaModel grupoDespesaNovo = convertToModel(grupoDespesaForm);
-            Optional<GrupoDespesaModel> byId = grupoDespesaRepository.findById(grupoDespesaNovo.getID());
-
-            if (byId.isPresent()) {
-                throw new IllegalStateException("Id já registrado.");
-            }
-
             grupoDespesaNovo = grupoDespesaRepository.save(grupoDespesaNovo);
             return convertToDto(grupoDespesaNovo);
         } catch (DataIntegrityViolationException e) {
@@ -62,7 +58,6 @@ public class GrupoDespesaService {
             if (grupoDespesaExistente.isPresent()) {
                 GrupoDespesaModel grupoDespesaAtualizado = grupoDespesaExistente.get();
                 grupoDespesaAtualizado.setNome(grupoDespesaForm.getNome());
-                grupoDespesaAtualizado.setCodigo(grupoDespesaForm.getCodigo());
                 grupoDespesaAtualizado.setDataAlteracao(LocalDate.now());
 
                 grupoDespesaRepository.save(grupoDespesaAtualizado);
@@ -88,7 +83,6 @@ public class GrupoDespesaService {
         GrupoDespesaModel grupoDespesaModel = new GrupoDespesaModel();
         grupoDespesaModel.setCodigo(grupoDespesaForm.getCodigo());
         grupoDespesaModel.setNome(grupoDespesaForm.getNome());
-        grupoDespesaModel.setDataCadastro(grupoDespesaForm.getDataCadastro());
 
         return grupoDespesaModel;
     }
@@ -96,7 +90,7 @@ public class GrupoDespesaService {
         GrupoDespesaDto grupoDespesaDto = new GrupoDespesaDto();
         grupoDespesaDto.setCodigo(grupoDespesaModel.getCodigo());
         grupoDespesaDto.setNome(grupoDespesaModel.getNome());
-        grupoDespesaDto.setDataCadastro(grupoDespesaModel.getDataCadastro());
+        grupoDespesaDto.setId(grupoDespesaModel.getID());
 
 
         return grupoDespesaDto;

@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GrupoDespesaDto {
+    private Long Id;
     private Float Codigo;
     private String Nome;
     private LocalDate DataCadastro;

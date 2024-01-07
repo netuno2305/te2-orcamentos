@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TipoTransacaoDto {
+    private Long Id;
     private String Nome;
     private LocalDate DataCadastro;
     private LocalDate DataAlteracao;

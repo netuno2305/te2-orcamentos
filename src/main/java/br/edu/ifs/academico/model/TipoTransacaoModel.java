@@ -20,4 +20,14 @@ public class TipoTransacaoModel {
 
     @Column(name = "DataAlteracao", nullable = false)
     private LocalDate DataAlteracao;
+
+    @PreUpdate
+    private void preUpdate() {
+        DataAlteracao = LocalDate.now();
+    }
+
+    @PrePersist
+    private void prePersist() {
+        DataCadastro = LocalDate.now();
+    }
 }

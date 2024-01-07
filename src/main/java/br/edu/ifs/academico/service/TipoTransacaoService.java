@@ -6,6 +6,7 @@ import br.edu.ifs.academico.rest.dto.TipoTransacaoDto;
 import br.edu.ifs.academico.rest.form.TipoTransacao.TipoTransacaoForm;
 import br.edu.ifs.academico.service.exceptions.DataIntegrityException;
 import br.edu.ifs.academico.service.exceptions.ObjectNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
@@ -18,16 +19,11 @@ import java.util.Optional;
 @Service
 public class TipoTransacaoService {
 
+    @Autowired
     ITipoTransacaoRepository tipoTransacaoRepository;
     public TipoTransacaoDto insert(TipoTransacaoForm tipoTransacaoForm) {
         try {
             TipoTransacaoModel tipoTransacaoModel = convertToModel(tipoTransacaoForm);
-            Optional<TipoTransacaoModel> byId = tipoTransacaoRepository.findById(tipoTransacaoModel.getID());
-
-            if (byId.isPresent()) {
-                throw new IllegalStateException("Id já registrado.");
-            }
-
             tipoTransacaoModel = tipoTransacaoRepository.save(tipoTransacaoModel);
             return convertToDto(tipoTransacaoModel);
         } catch (DataIntegrityViolationException e) {
@@ -81,7 +77,6 @@ public class TipoTransacaoService {
     private TipoTransacaoModel convertToModel(TipoTransacaoForm tipoTransacaoForm) {
         TipoTransacaoModel tipoTransacaoModel = new TipoTransacaoModel();
         tipoTransacaoModel.setNome(tipoTransacaoForm.getNome());
-        tipoTransacaoModel.setDataCadastro(tipoTransacaoForm.getDataCadastro());
 
         return tipoTransacaoModel;
     }
@@ -89,7 +84,7 @@ public class TipoTransacaoService {
         TipoTransacaoDto tipoTransacaoDto = new TipoTransacaoDto();
         tipoTransacaoDto.setNome(tipoTransacaoModel.getNome());
         tipoTransacaoDto.setDataCadastro(tipoTransacaoModel.getDataCadastro());
-
+        tipoTransacaoDto.setId(tipoTransacaoModel.getID());
 
         return tipoTransacaoDto;
     }
