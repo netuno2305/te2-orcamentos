@@ -11,8 +11,23 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class LancamentoDto {
     private Long Id;
+    private Boolean LancamentoInvalido;
     private String Descricao;
+    private String Contratado;
+    private String GED;
     private Float Valor;
+    private String idTipoLancamento;
+    private String idUnidade;
+    private String idUnidadeOrcamentaria;
+    private String idPrograma;
+    private String idAcao;
+    private String idFonteRecurso;
+    private String idGrupoDespesa;
+    private String idModalidadeAplicacao;
+    private String idElementoDespesa;
+    private String idSolicitante;
+    private String idObjetivoEstrategico;
+    private String idTipoTransacao;
     private LocalDate DataLancamento;
     private LocalDate DataCadastro;
     private LocalDate DataAlteracao;

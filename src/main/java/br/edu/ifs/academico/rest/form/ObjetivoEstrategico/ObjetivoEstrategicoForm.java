@@ -11,7 +11,6 @@ public class ObjetivoEstrategicoForm {
 
     @NotEmpty
     @NotBlank
-    @Email(message = "O Endereço de e-mail é inválido.")
     @Size(max = 80)
     private String nome;
 

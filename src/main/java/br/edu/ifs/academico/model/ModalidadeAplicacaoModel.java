@@ -21,6 +21,6 @@ public class ModalidadeAplicacaoModel {
     @Column(name = "DataCadastro", nullable = false)
     private LocalDate DataCadastro;
 
-    @Column(name = "DataAlteracao", nullable = false)
+    @Column(name = "DataAlteracao")
     private LocalDate DataAlteracao;
 }
