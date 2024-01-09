@@ -21,4 +21,14 @@ public class ObjetivoEstrategicoModel {
 
     @Column(name = "DataAlteracao")
     private LocalDate DataAlteracao;
+
+    @PreUpdate
+    private void preUpdate() {
+        DataAlteracao = LocalDate.now();
+    }
+
+    @PrePersist
+    private void prePersist() {
+        DataCadastro = LocalDate.now();
+    }
 }

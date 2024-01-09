@@ -5,6 +5,7 @@ import br.edu.ifs.academico.rest.dto.ModalidadeAplicacaoDto;
 import br.edu.ifs.academico.rest.form.ModalidadeAplicacao.ModalidadeAplicacaoForm;
 import br.edu.ifs.academico.service.exceptions.DataIntegrityException;
 import br.edu.ifs.academico.service.exceptions.ObjectNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
@@ -17,16 +18,13 @@ import java.util.Optional;
 @Service
 public class ModalidadeAplicacaoService {
 
+    @Autowired
     IModalidadeAplicacaoRepository modalidadeAplicacaoRepository;
 
     public ModalidadeAplicacaoDto insert(ModalidadeAplicacaoForm modalidadeAplicacaoForm) {
         try {
             ModalidadeAplicacaoModel modalidadeAplicacaoModel = convertToModel(modalidadeAplicacaoForm);
-            Optional<ModalidadeAplicacaoModel> byId = modalidadeAplicacaoRepository.findById(modalidadeAplicacaoModel.getID());
 
-            if (byId.isPresent()) {
-                throw new IllegalStateException("Id já registrado.");
-            }
 
             modalidadeAplicacaoModel = modalidadeAplicacaoRepository.save(modalidadeAplicacaoModel);
             return convertToDto(modalidadeAplicacaoModel);
@@ -83,13 +81,13 @@ public class ModalidadeAplicacaoService {
         ModalidadeAplicacaoModel modalidadeAplicacaoModel = new ModalidadeAplicacaoModel();
         modalidadeAplicacaoModel.setCodigo(modalidadeAplicacaoForm.getCodigo());
         modalidadeAplicacaoModel.setNome(modalidadeAplicacaoForm.getNome());
-        modalidadeAplicacaoModel.setDataCadastro(modalidadeAplicacaoForm.getDataCadastro());
 
         return modalidadeAplicacaoModel;
     }
     private ModalidadeAplicacaoDto convertToDto(ModalidadeAplicacaoModel modalidadeAplicacaoModel) {
         ModalidadeAplicacaoDto modalidadeAplicacaoDto = new ModalidadeAplicacaoDto();
         modalidadeAplicacaoDto.setCodigo(modalidadeAplicacaoModel.getCodigo());
+        modalidadeAplicacaoDto.setId(modalidadeAplicacaoModel.getID());
         modalidadeAplicacaoDto.setNome(modalidadeAplicacaoModel.getNome());
         modalidadeAplicacaoDto.setDataCadastro(modalidadeAplicacaoModel.getDataCadastro());
 

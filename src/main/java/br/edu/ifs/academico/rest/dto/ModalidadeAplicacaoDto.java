@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class ModalidadeAplicacaoDto {
 
+    private Long Id;
     private Integer Codigo;
     private String Nome;
     private LocalDate DataCadastro;

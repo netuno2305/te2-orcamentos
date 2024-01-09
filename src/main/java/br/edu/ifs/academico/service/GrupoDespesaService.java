@@ -92,7 +92,6 @@ public class GrupoDespesaService {
         grupoDespesaDto.setNome(grupoDespesaModel.getNome());
         grupoDespesaDto.setId(grupoDespesaModel.getID());
 
-
         return grupoDespesaDto;
     }
 

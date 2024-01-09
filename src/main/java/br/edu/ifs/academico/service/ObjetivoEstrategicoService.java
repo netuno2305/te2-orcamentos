@@ -6,6 +6,7 @@ import br.edu.ifs.academico.rest.dto.ObjetivoEstrategicoDto;
 import br.edu.ifs.academico.rest.form.ObjetivoEstrategico.ObjetivoEstrategicoForm;
 import br.edu.ifs.academico.service.exceptions.DataIntegrityException;
 import br.edu.ifs.academico.service.exceptions.ObjectNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
@@ -17,17 +18,13 @@ import java.util.Optional;
 
 @Service
 public class ObjetivoEstrategicoService {
-    
+
+    @Autowired
     IObjetivoEstrategicoRepository objetivoEstrategicoRepository;
 
     public ObjetivoEstrategicoDto insert(ObjetivoEstrategicoForm objetivoEstrategicoForm) {
         try {
             ObjetivoEstrategicoModel objetivoEstrategicoModel = convertToModel(objetivoEstrategicoForm);
-            Optional<ObjetivoEstrategicoModel> byId = objetivoEstrategicoRepository.findById(objetivoEstrategicoModel.getID());
-
-            if (byId.isPresent()) {
-                throw new IllegalStateException("Id já registrado.");
-            }
 
             objetivoEstrategicoModel = objetivoEstrategicoRepository.save(objetivoEstrategicoModel);
             return convertToDto(objetivoEstrategicoModel);
@@ -82,7 +79,6 @@ public class ObjetivoEstrategicoService {
     private ObjetivoEstrategicoModel convertToModel(ObjetivoEstrategicoForm objetivoEstrategicoForm) {
         ObjetivoEstrategicoModel objetivoEstrategicoModel = new ObjetivoEstrategicoModel();
         objetivoEstrategicoModel.setNome(objetivoEstrategicoForm.getNome());
-        objetivoEstrategicoModel.setDataCadastro(objetivoEstrategicoForm.getDataCadastro());
 
         return objetivoEstrategicoModel;
     }
@@ -90,7 +86,7 @@ public class ObjetivoEstrategicoService {
         ObjetivoEstrategicoDto objetivoEstrategicoDto = new ObjetivoEstrategicoDto();
         objetivoEstrategicoDto.setNome(objetivoEstrategicoModel.getNome());
         objetivoEstrategicoDto.setDataCadastro(objetivoEstrategicoModel.getDataCadastro());
-
+        objetivoEstrategicoDto.setId(objetivoEstrategicoModel.getID());
 
         return objetivoEstrategicoDto;
     }

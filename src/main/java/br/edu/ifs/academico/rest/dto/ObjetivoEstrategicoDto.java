@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class ObjetivoEstrategicoDto {
 
+    private Long Id;
     private String Nome;
     private LocalDate DataCadastro;
     private LocalDate DataAlteracao;
